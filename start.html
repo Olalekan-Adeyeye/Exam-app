@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>QuizPro</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <h1>QuizPro</h1>
+        <div>
+          <a id="submit" class="submit">Submit</a>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="hidden small-screen">
+        <p>Please use a screen of 400px and above</p>
+      </div>
+      <div class="main-content">
+        <div class="header">
+          <p class="time-left">
+            Time remaining:
+            <span id="mins"></span><strong>:</strong><span id="secs"></span>
+          </p>
+          <!-- <p class="help" id="help">Admin. No.: 123/48</p> -->
+        </div>
+        <div class="question-container">
+          <div class="counter" id="counter"></div>
+          <h2 class="question" id="question">Question</h2>
+        </div>
+        <div class="option-container">
+          <p class="option-letter">A</p>
+          <p class="option-text" id="option-text">Option</p>
+        </div>
+        <div class="option-container">
+          <p class="option-letter">B</p>
+          <p class="option-text" id="option-text">Option</p>
+        </div>
+        <div class="option-container">
+          <p class="option-letter">C</p>
+          <p class="option-text" id="option-text">Option</p>
+        </div>
+        <div class="option-container">
+          <p class="option-letter">D</p>
+          <p class="option-text" id="option-text">Option</p>
+        </div>
+
+        <button class="btn" id="next-btn">NEXT</button>
+        <button class="hidden btn" id="prev-btn">PREVIOUS</button>
+      </div>
+    </div>
+    <script src="js/start.js"></script>
+  </body>
+</html>
