@@ -4,14 +4,17 @@ const togglePassword = document.getElementById("toggle-password")
 const password = document.getElementById("password")
 const indexForm = document.getElementById("index-form");
 const submit = document.getElementById("submit")
+const errorMsg = document.getElementById("error-msg")
 
 indexForm.addEventListener('submit', function(event){
     event.preventDefault()
     let formData = new FormData(event.target);
     let email = formData.get("email")
     localStorage.setItem('email', email)
-    signIn(email, password.value)
-    submit.innerHTML = `<img class="loading-spinner" src="/Images/loading-spinner.png">`
+    errorMsg.classList.add("hidden")
+    submit.innerHTML = `<span class="wait">PLEASE WAIT  </span><img class="loading-spinner" src="/Images/loading-spinner.png">`
+    signIn(email, password.value, errorMsg, submit)
+    submit.classList.add('disabled')
 
 })
 

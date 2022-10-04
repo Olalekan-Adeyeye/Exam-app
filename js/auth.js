@@ -14,17 +14,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-function signIn(email, password){
+function signIn(email, password, errormsg, toggleButton){
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user)
-        window.location.replace("start.html") 
+        window.location.replace("start.html")
+        toggleButton.classList.add
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
+        errormsg.classList.remove('hidden')
+        toggleButton.innerHTML = "SIGN IN"
+        toggleButton.classList.remove("disabled")
     });
 
 }
