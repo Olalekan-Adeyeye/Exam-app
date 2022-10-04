@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>QuizPro</title>
+    <title>QuizPro | Start Quiz</title>
     <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -32,25 +32,40 @@
         </div>
         <div class="option-container">
           <p class="option-letter">A</p>
-          <p class="option-text" id="option-text">Option</p>
+          <p class="option-text" >Option</p>
         </div>
         <div class="option-container">
           <p class="option-letter">B</p>
-          <p class="option-text" id="option-text">Option</p>
+          <p class="option-text" >Option</p>
         </div>
         <div class="option-container">
           <p class="option-letter">C</p>
-          <p class="option-text" id="option-text">Option</p>
+          <p class="option-text" >Option</p>
         </div>
         <div class="option-container">
           <p class="option-letter">D</p>
-          <p class="option-text" id="option-text">Option</p>
+          <p class="option-text" >Option</p>
         </div>
 
         <button class="btn" id="next-btn">NEXT</button>
         <button class="hidden btn" id="prev-btn">PREVIOUS</button>
       </div>
     </div>
-    <script src="js/start.js"></script>
+    <script type="text/javascript">
+     let popHandler = () => {
+  if (confirm('Go back?')) {
+    window.history.back() 
+  } else {
+    window.history.forward()
+    setTimeout(() => {
+      window.addEventListener('popstate', popHandler, {once: true})
+    }, 50) // delay needed since the above is an async operation for some reason
+  }
+}
+window.addEventListener('popstate', popHandler, {once: true})
+window.history.pushState(null,null,null)
+    </script>
+  
+    <script src="js/start.js" type="module"></script>
   </body>
 </html>

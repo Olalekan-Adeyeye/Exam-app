@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QuizPro</title>
+    <title>QuizPro | Log in</title>
     <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -13,28 +14,45 @@
       </div>
     </header>
     <div class="container form-container">
-      <form id="index-form" action="#" method="POST">
-        <div class="form-img-wrapper">
-          <img src="images/circle-user-solid.svg" alt="" />
+      <div class="error-msg hidden" id="error-msg">Authentication error. Please retry</div>
+      <div class="form-wrapper">
+        <div class="img-wrapper">
+          <img src="Images/circle-user-solid.svg" alt="contact pic" />
         </div>
-        <input
-          name="email"
-          type="email"
-          aria-label="email"
-          required
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          type="password"
-          aria-label="email"
-          required
-          placeholder="Password"
-        />
-        <button type="submit">go to quiz</button>
-      </form>
+        <div class="sign-up">
+          <h3>Login to QuizPro</h3>
+          <p>
+            Sign in to continue to your exams.
+          </p>
+        </div>
+        <form action="" method="POST" class="form" id="index-form">
+          <label for="username">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            placeholder="Enter Email Here..."
+            required
+          />
+          <label for="password">Password</label>
+          <div class="password">
+            <input
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="current-password"
+            placeholder="Enter Password Here..."
+            required
+          />
+          <img src="Images/password-shown.png" alt="see password" id="toggle-password">
+          </div>
+          
+          <button type="submit" id="submit">Sign in</button>
+        </form>
+      </div>
     </div>
 
-    <script src="js/index.js"></script>
+    <script src="js/index.js" type="module"></script>
   </body>
 </html>

@@ -1,3 +1,12 @@
+import { isUserLoggedIn } from "./auth.js";
+
+isUserLoggedIn()
+
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+  history.go(1);
+};
+
 // Quiz questions
 var questions = [
   {
