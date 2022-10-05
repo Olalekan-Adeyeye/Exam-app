@@ -35,7 +35,6 @@ function signIn(email, password, errormsg, toggleButton){
 function logOut(){
     signOut(auth)
     .then(() => {
-        window.location.replace("index.html")  
     })
     .catch((error) => {
         const errorCode = error.code;
